@@ -5,7 +5,7 @@ import './App.css';
 
 import './Chris.css'
 
-=======
+
 import axios from 'axios'
 
 import Login from './Login'
@@ -21,7 +21,7 @@ import Appearance from './Appearance'
 import MyPosts from './MyPosts'
 
 import SinglePost from './SinglePost'
-=======
+
 import TokenService from './services/TokenService'
 
 
