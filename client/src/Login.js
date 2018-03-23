@@ -1,54 +1,43 @@
 //LetsGetit
 
 import React, {Component} from 'react'
-import Redirect from 'react-router-dom'
-import services from './services/apiServices'
+import Userform from './Userform'
+import Feed from './Feed'
 
 class Login extends Component {
   constructor(props){
     super(props)
     this.state = {
-      user_name: '',
-      password: '',
-      authenticated: false,
-      fireRedirect: false
+      isLoggedIn: this.props.check
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
-handleChange(e){
-  let name = e.target.name
-  let value = e.target.value
-  this.setState({
-    [name]:value
-  })
+onSubmit(data){
+  this.props.submit(data)
 }
 
-handleSubmit(e){
-      e.preventDefault()
-      let name = e.target.name
-      console.log('username:', this.state.user_name)
-      console.log('password:', this.state.password);
-      services.authenticateUser(this.state)
-      .then(user => {
-        console.log(user)
-      })
-      .catch(err => console.log('loggin is fucked up', err))
-  }
-
+logout(ev){
+  this.props.loggingout(ev)
+}
   render(){
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input name='user_name' placeholder='Username' type='text' onChange={this.handleChange}/><br />
-          <input name='password' type='password' onChange={this.handleChange}/>
-          <input type='submit' />
-        </form>
+        {console.log('checking if user is logged in ---> ',this.state.isLoggedIn)}
+        {
+        this.state.isLoggedIn ?
+        <Feed />
+        :
+        <div>
+        <Userform submit={this.onSubmit} />
         <a href='/signup'>Sign up here</a>
+        <button onClick={this.logout}>Logout</button>
       </div>
+        }
+    </div>
     )
-  }
+}
 }
 
 

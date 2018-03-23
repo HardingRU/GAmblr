@@ -63,6 +63,7 @@ services.deleteUser = (username) => {
 }
 
 services.authenticateUser = (things) => {
+	console.log('inside services...')
     return axios({
         method: 'POST',
         url: `/api/users/login`,
