@@ -10,9 +10,9 @@ let db;
 
 if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
   db = pgp({
-    database: 'gamblr',
-    port: 5432,
-    host: 'localhost',
+    database: 'gamblr' || process.env.PG_DATABASE,
+    port: 5432 || process.env.PG_PORT,
+    host: 'localhost' || process.env.PG_HOST,
   });
 } else if (process.env.NODE_ENV === 'production') {
   db = pgp(process.env.DATABASE_URL);
