@@ -7,7 +7,7 @@ const cors = require('cors');
 const tokenService = require('./services/TokenService')
 const authService = require('./services/AuthService')
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
   console.log(`Listening on Sasha's port ${PORT}`)
 })
