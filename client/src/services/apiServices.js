@@ -14,7 +14,7 @@ services.getPost = (id) => {
 
 services.register = (things) => {
 	console.log('this is things -> ', things);
-	return axios('http://localhost:3000/api/users/signup', {
+	return axios('https://ga-mblr.herokuapp.com/api/users/signup', {
     method: "POST",
     data : things
   })
@@ -25,14 +25,14 @@ services.getAllLikes = (user) => {
 }
 
 services.login = (things) => {
-	return axios('http://localhost:3000/api/users/login', {
+	return axios('https://ga-mblr.herokuapp.com/api/users/login', {
     method: "POST",
     data : things
   })
 }
 
 services.checkLogin = (token) => {
-	return axios('http://localhost:3000/isLoggedIn', {
+	return axios('https://ga-mblr.herokuapp.com/isLoggedIn', {
     headers: {
       Authorization: `Bearer ${TokenService.read()}`
 			}
