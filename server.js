@@ -40,11 +40,13 @@ app.get('/decodeToken', (req, res) => {
   res.json({token: tokenService.decode(req.authToken)})
 })
 
-app.get('/',(req,res) => {
-	res.json({
-		message: 'hello world'
-	})
-})
+// app.get('/',(req,res) => {
+// 	res.json({
+// 		message: 'hello world'
+// 	})
+// })
+
+app.use(express.static('client/build'));
 
 app.get('*', function(req, res) {
   res.status(404).send({message: 'Oops! Not found.'});
