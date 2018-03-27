@@ -1,4 +1,4 @@
-\c gamblr
+
 
 INSERT INTO users (user_name, password, pic, bg, blog_name, blog_desc) VALUES
   ('jace', '123', 'https://thumbs.dreamstime.com/b/tennis-ball-icon-16492142.jpg', 'bca', 'Ace Blog', 'Tennis and life'),
