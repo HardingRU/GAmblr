@@ -57,7 +57,7 @@ class SinglePost extends Component {
   getData() {
     let curr = window.location.href
     let curr2 = curr.length
-    let curr3 = curr.substring(27, curr2)
+    let curr3 = curr.substring(35, curr2)
     this.setState({
       postId: curr3
     })

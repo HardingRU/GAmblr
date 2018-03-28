@@ -54,7 +54,7 @@ class UserPage extends Component {
   getStuff() {
       let curr = window.location.href
       let curr2 = curr.length
-      let curr3 = curr.substring(27, curr2)
+      let curr3 = curr.substring(35, curr2)
       services.getUser(curr3).then(user => {
         console.log('userdata',user)
         this.setState({
